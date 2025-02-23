@@ -2797,24 +2797,6 @@
         "ble": false
     },
     {
-        "id": "9d8bfd7e0d216779",
-        "type": "ui-theme",
-        "name": "Default Theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#15617e",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
         "id": "08d558d154bc9083",
         "type": "remote-config",
         "name": "Node-RED UI",
