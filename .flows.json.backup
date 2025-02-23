@@ -1902,7 +1902,7 @@
         "cursorBlink": true,
         "drawBoldTextInBrightColors": true,
         "loggingEnabled": false,
-        "name": "server"
+        "name": ""
     },
     {
         "id": "1e71a25b.2d361e",
@@ -2797,16 +2797,14 @@
         "ble": false
     },
     {
-        "id": "08d558d154bc9083",
-        "type": "remote-config",
-        "name": "Node-RED UI",
-        "host": "localhost",
-        "protocol": "http",
-        "port": "1880",
-        "baseurl": "/ui",
-        "instancehash": "5r8lfimqbpwtuw5g4foqs76ifx8prfxqanq47694n1ycglq73cn57yxn8m8x07hu",
-        "server": "nodered02.remote-red.com",
-        "region": "de"
+        "id": "8cfc2d73e53c4b17",
+        "type": "ui_spacer",
+        "z": "7def0f0aac90fc76",
+        "name": "spacer",
+        "group": "9eeb7863f3270214",
+        "order": 6,
+        "width": 2,
+        "height": 1
     },
     {
         "id": "a0f72417.ea2838",
@@ -5399,7 +5397,7 @@
             },
             {
                 "t": "eq",
-                "v": "Voordeur Links",
+                "v": "Camara_cotxe",
                 "vt": "str"
             }
         ],
@@ -5428,29 +5426,13 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 600,
-        "y": 320,
+        "x": 460,
+        "y": 520,
         "wires": [
             [
-                "9e63ed7b72301142"
+                "d269af0dbf3444c5"
             ]
         ]
-    },
-    {
-        "id": "9e63ed7b72301142",
-        "type": "link out",
-        "z": "c5dd54439b8f14a8",
-        "name": "",
-        "links": [
-            "693af8b9.876e28",
-            "83b60540.55b568",
-            "cba4991a.750998",
-            "5baf3b882a2e7403",
-            "dc24617f.29c84"
-        ],
-        "x": 815,
-        "y": 320,
-        "wires": []
     },
     {
         "id": "78e90a9b6d562b0d",
@@ -5459,7 +5441,7 @@
         "name": "Envio_Telegram",
         "bot": "69473ffd4fd2da83",
         "outputs": 1,
-        "x": 740,
+        "x": 960,
         "y": 520,
         "wires": [
             []
@@ -5507,74 +5489,10 @@
         "initialize": "",
         "finalize": "",
         "x": 240,
-        "y": 320,
+        "y": 220,
         "wires": [
             [
                 "a44227bea3cf69f4"
-            ]
-        ]
-    },
-    {
-        "id": "dc9fca3857b74ea0",
-        "type": "mqtt in",
-        "z": "c5dd54439b8f14a8",
-        "d": true,
-        "name": "",
-        "topic": "domoticz/out",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "922a2d083b61779f",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 110,
-        "y": 200,
-        "wires": [
-            [
-                "5e08ae1c8fbe80d9"
-            ]
-        ]
-    },
-    {
-        "id": "5e08ae1c8fbe80d9",
-        "type": "json",
-        "z": "c5dd54439b8f14a8",
-        "d": true,
-        "name": "json convert",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 310,
-        "y": 200,
-        "wires": [
-            [
-                "fe44a81a5eb97fbd"
-            ]
-        ]
-    },
-    {
-        "id": "fe44a81a5eb97fbd",
-        "type": "switch",
-        "z": "c5dd54439b8f14a8",
-        "d": true,
-        "name": "idx_check",
-        "property": "payload.name",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "Deur Voordeur",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 580,
-        "y": 240,
-        "wires": [
-            [
-                "6fba7dfd644a7771"
             ]
         ]
     },
@@ -5588,7 +5506,7 @@
                 "t": "set",
                 "p": "payload.camera",
                 "pt": "msg",
-                "to": "Voordeur Links",
+                "to": "Camara_cotxe",
                 "tot": "str"
             }
         ],
@@ -5602,22 +5520,6 @@
         "wires": [
             [
                 "8110cb53b0d5b30a"
-            ]
-        ]
-    },
-    {
-        "id": "5baf3b882a2e7403",
-        "type": "link in",
-        "z": "c5dd54439b8f14a8",
-        "name": "",
-        "links": [
-            "9e63ed7b72301142"
-        ],
-        "x": 315,
-        "y": 520,
-        "wires": [
-            [
-                "d269af0dbf3444c5"
             ]
         ]
     },
@@ -5641,7 +5543,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 530,
+        "x": 710,
         "y": 520,
         "wires": [
             [
@@ -5692,7 +5594,7 @@
         "authType": "digest",
         "senderr": false,
         "headers": [],
-        "x": 550,
+        "x": 450,
         "y": 420,
         "wires": [
             [
@@ -5715,20 +5617,6 @@
             [
                 "6fba7dfd644a7771"
             ]
-        ]
-    },
-    {
-        "id": "6b3e47e79cb2114b",
-        "type": "remote-access",
-        "z": "c5dd54439b8f14a8",
-        "confignode": "08d558d154bc9083",
-        "name": "Remote-RED",
-        "verbose": 0,
-        "x": 870,
-        "y": 60,
-        "wires": [
-            [],
-            []
         ]
     },
     {
@@ -10980,11 +10868,13 @@
         "type": "function",
         "z": "b866376954a647de",
         "name": "foto",
-        "func": "msg.payload.content = \"help - Ayuda\\nstart - Inicio\\nenciende - Enciende Led\\napaga - Apaga led\\nlee - Muestra datos broker\"\nreturn msg;",
+        "func": "msg.payload.content = \"help - Ayuda\\nstart - Inicio\\nenciende - Enciende Led\\napaga - Apaga led\\nlee - Muestra datos broker\"\nmsg.payload.name=\"Fer_foto\";\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 610,
         "y": 240,
         "wires": [
@@ -24385,7 +24275,8 @@
             ],
             [],
             [
-                "55ea80923d19bc89"
+                "55ea80923d19bc89",
+                "8b57c321deaba5fb"
             ]
         ]
     },
@@ -24475,9 +24366,9 @@
         "z": "7def0f0aac90fc76",
         "name": "Voltatge",
         "group": "9eeb7863f3270214",
-        "order": 4,
-        "width": "2",
-        "height": "2",
+        "order": 3,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "",
         "label": "mV",
@@ -24556,9 +24447,9 @@
         "z": "7def0f0aac90fc76",
         "name": "RF",
         "group": "9eeb7863f3270214",
-        "order": 6,
-        "width": "2",
-        "height": "2",
+        "order": 4,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "",
         "label": "%",
@@ -24580,10 +24471,10 @@
         "id": "b352e7a1c65b9ee5",
         "type": "ui_led",
         "z": "7def0f0aac90fc76",
-        "order": 3,
+        "order": 1,
         "group": "9eeb7863f3270214",
-        "width": "0",
-        "height": "0",
+        "width": 0,
+        "height": 0,
         "label": "Porta_1.Alarma",
         "labelPlacement": "right",
         "labelAlignment": "left",
@@ -24674,10 +24565,10 @@
         "id": "fdfe410eb838d325",
         "type": "ui_led",
         "z": "7def0f0aac90fc76",
-        "order": 3,
+        "order": 2,
         "group": "9eeb7863f3270214",
-        "width": "0",
-        "height": "0",
+        "width": 0,
+        "height": 0,
         "label": "Porta_1.Baix_Bateria",
         "labelPlacement": "right",
         "labelAlignment": "left",
@@ -25122,6 +25013,231 @@
         "x": 590,
         "y": 740,
         "wires": []
+    },
+    {
+        "id": "8b57c321deaba5fb",
+        "type": "controltimer",
+        "z": "7def0f0aac90fc76",
+        "name": "Time_Out_Porta_1",
+        "timerType": "delay",
+        "timerDurationUnit": "second",
+        "timerDurationType": "num",
+        "timerDuration": 5,
+        "timerLoopTimeoutUnit": "second",
+        "timerLoopTimeoutType": "num",
+        "timerLoopTimeout": 0,
+        "loopTimeoutMessageType": "str",
+        "loopTimeoutMessage": "LOOP_TIMEOUT",
+        "timerMaxLoopIterationsType": "num",
+        "timerMaxLoopIterations": 0,
+        "loopMaxIterationsMessageType": "str",
+        "loopMaxIterationsMessage": "MAX_LOOP_ITERATIONS",
+        "isConsecutiveStartActionTimerResetAllowed": false,
+        "isRunningTimerProgressVisible": true,
+        "outputReceivedMessageOnTimerTrigger": true,
+        "outputReceivedMessageOnTimerHalt": false,
+        "startTimerOnReceivalOfUnknownMessage": false,
+        "resetTimerOnReceivalOfUnknownMessage": false,
+        "isDebugModeEnabled": false,
+        "timerTriggeredMessageType": "str",
+        "timerTriggeredMessage": "TIMER_TRIGGERED",
+        "timerHaltedMessageType": "str",
+        "timerHaltedMessage": "TIMER_HALTED",
+        "isStartActionEnabled": true,
+        "isStopActionEnabled": true,
+        "isResetActionEnabled": true,
+        "isPauseActionEnabled": true,
+        "isContinueActionEnabled": true,
+        "actionPropertyNameType": "str",
+        "actionPropertyName": "payload",
+        "startActionNameType": "str",
+        "startActionName": "START",
+        "stopActionNameType": "str",
+        "stopActionName": "STOP",
+        "resetActionNameType": "str",
+        "resetActionName": "RESET",
+        "pauseActionNameType": "str",
+        "pauseActionName": "PAUSE",
+        "continueActionNameType": "str",
+        "continueActionName": "CONTINUE",
+        "x": 350,
+        "y": 920,
+        "wires": [
+            [
+                "e7c6e87d179505c7"
+            ],
+            [
+                "48f6d50c7cd47af7"
+            ]
+        ]
+    },
+    {
+        "id": "33d31402a9b34a08",
+        "type": "comment",
+        "z": "7def0f0aac90fc76",
+        "name": "Time_Out",
+        "info": "",
+        "x": 100,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "05a04c79e9b976cc",
+        "type": "inject",
+        "z": "7def0f0aac90fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "900",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "START",
+        "payloadType": "str",
+        "x": 100,
+        "y": 880,
+        "wires": [
+            [
+                "8b57c321deaba5fb"
+            ]
+        ]
+    },
+    {
+        "id": "a57418414abc7817",
+        "type": "inject",
+        "z": "7def0f0aac90fc76",
+        "name": "PAUSE",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "PAUSE",
+        "payloadType": "str",
+        "x": 90,
+        "y": 920,
+        "wires": [
+            [
+                "8b57c321deaba5fb"
+            ]
+        ]
+    },
+    {
+        "id": "ef8c2d2e0dee333e",
+        "type": "inject",
+        "z": "7def0f0aac90fc76",
+        "name": "CONTINUE",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "CONTINUE",
+        "payloadType": "str",
+        "x": 110,
+        "y": 960,
+        "wires": [
+            [
+                "8b57c321deaba5fb"
+            ]
+        ]
+    },
+    {
+        "id": "96cd4d10663aae80",
+        "type": "inject",
+        "z": "7def0f0aac90fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "RESET",
+        "payloadType": "str",
+        "x": 90,
+        "y": 1000,
+        "wires": [
+            [
+                "8b57c321deaba5fb"
+            ]
+        ]
+    },
+    {
+        "id": "e7c6e87d179505c7",
+        "type": "debug",
+        "z": "7def0f0aac90fc76",
+        "name": "debug 158",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "48f6d50c7cd47af7",
+        "type": "debug",
+        "z": "7def0f0aac90fc76",
+        "name": "debug 159",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "38119402bb0eb2cd",
+        "type": "ui_button",
+        "z": "7def0f0aac90fc76",
+        "name": "Time_Out_Porta_1",
+        "group": "9eeb7863f3270214",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.icon}}",
+        "tooltip": "CONTESTA O NO",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 690,
+        "y": 840,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "a13821d1374b484f",
@@ -25912,7 +26028,7 @@
         "z": "b7b9487be26ae896",
         "name": "Time_Out_Fum",
         "timerType": "delay",
-        "timerDurationUnit": "minute",
+        "timerDurationUnit": "hour",
         "timerDurationType": "num",
         "timerDuration": 1,
         "timerLoopTimeoutUnit": "second",
